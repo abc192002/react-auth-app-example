@@ -13,7 +13,5 @@ const usersQuery = gql`
     }
   }
 `;
-
 const DashboardPageWithData = graphql(usersQuery)(DashboardPage);
-
 export default DashboardPageWithData;
