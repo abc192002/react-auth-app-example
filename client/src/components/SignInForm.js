@@ -27,8 +27,8 @@ const SignInForm = (props) => {
     <form onSubmit={handleSubmit}>
       {errors}
       <Field name="email" type="email" component={renderField} label="Email" />
-      <Field name="password" type="password" component={renderField} label="Password" />
-      <button type="submit" className="btn btn-primary">Sign in</button>
+      <Field name="password" type="password" component={renderField} label="Contraseña" />
+      <button type="submit" className="btn btn-primary">Ingresar</button>
     </form>
   );
 }
@@ -37,15 +37,15 @@ const validate = (values) => {
   const errors = {}
 
   if (!values.email) {
-    errors.email = 'Required'
+    errors.email = 'Requerido'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Email Invalido';
   }
 
   if (!values.password) {
-    errors.password = 'Required';
+    errors.password = 'Requerido';
   } else if (values.password.length <= 3) {
-    errors.password = 'Must be at least 4 characters';
+    errors.password = 'Necesitas 4 caracteres como mínimo';
   }
 
   return errors;

@@ -11,20 +11,20 @@ export default (props) => {
     (props.authenticated) ?
       <div>
         <div className="nav navbar-nav">
-          <Link to="/" className="nav-item nav-link">Home</Link>
+          <Link to="/" className="nav-item nav-link">Inicio</Link>
         </div>
         <div className="nav navbar-nav float-xs-right">
-          <Link to="#" onClick={logout} className="nav-item nav-link">Logout</Link>
+          <Link to="#" onClick={logout} className="nav-item nav-link">Salir</Link>
         </div>
       </div>
     :
       <div>
         <div className="nav navbar-nav">
-          <Link to="/" className="nav-item nav-link">Home</Link>
+          <Link to="/" className="nav-item nav-link">Inicio</Link>
         </div>
         <div className="nav navbar-nav float-xs-right">
-          <Link to="/signin" className="nav-item nav-link">Sign in</Link>
-          <Link to="/signup" className="nav-item nav-link">Sign up</Link>
+          <Link to="/signin" className="nav-item nav-link">Ingresar</Link>
+          <Link to="/signup" className="nav-item nav-link">Registrarse</Link>
         </div>
       </div>
     );

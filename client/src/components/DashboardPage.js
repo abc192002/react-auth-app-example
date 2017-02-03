@@ -3,12 +3,13 @@ import React from 'react';
 export default (props) => {
   const users = props.data.users;
 
+
   if (!users) {
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h1>Loading</h1>
+            <h1>Cargando</h1>
           </div>
         </div>
       </div>
@@ -19,13 +20,13 @@ export default (props) => {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <h1>Users</h1>
+          <h1>Usuarios</h1>
           <table className="table mt-2">
             <thead>
               <tr>
                 <th>#</th>
-                <th>First name</th>
-                <th>Last Name</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
                 <th>Email</th>
               </tr>
             </thead>

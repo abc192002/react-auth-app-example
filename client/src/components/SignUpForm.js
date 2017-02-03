@@ -26,11 +26,11 @@ const SignUpForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       {errors}
-      <Field name="firstName" type="text" component={renderField} label="First name" />
-      <Field name="lastName" type="text" component={renderField} label="Last name" />
+      <Field name="firstName" type="text" component={renderField} label="Nombre" />
+      <Field name="lastName" type="text" component={renderField} label="Apellido" />
       <Field name="email" type="email" component={renderField} label="Email" />
-      <Field name="password" type="password" component={renderField} label="Password" />
-      <button type="submit" className="btn btn-primary">Sign up</button>
+      <Field name="password" type="password" component={renderField} label="Contraseña" />
+      <button type="submit" className="btn btn-primary">Registrarse</button>
     </form>
   );
 }
@@ -39,23 +39,23 @@ const validate = (values) => {
   const errors = {}
 
   if (!values.firstName) {
-    errors.firstName = 'Required';
+    errors.firstName = 'Requerido';
   }
 
   if (!values.lastName) {
-    errors.lastName = 'Required';
+    errors.lastName = 'Requerido';
   }
 
   if (!values.email) {
-    errors.email = 'Required'
+    errors.email = 'Requerido'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Dirección email Invalido';
   }
 
   if (!values.password) {
-    errors.password = 'Required';
+    errors.password = 'Requerido';
   } else if (values.password.length <= 3) {
-    errors.password = 'Must be at least 4 characters';
+    errors.password = 'Necesitas como mínimo 4 caracteres';
   }
 
   return errors;
