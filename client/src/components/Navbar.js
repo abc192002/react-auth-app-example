@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router';
+//import AppBar from 'material-ui/AppBar';
 
 export default (props) => {
   const logout = (e) => {
     e.preventDefault();
     props.logout();
   };
-
+  // <AppBar
+  //   title="Title"
+  //   iconClassNameRight="muidocs-icon-navigation-expand-more"
+  // />
+  //<Navbar />
   const links = (
     (props.authenticated) ?
       <div>
@@ -30,6 +35,8 @@ export default (props) => {
     );
 
   return (
+
+
     <nav className="navbar navbar-light bg-faded mb-3">
       <div className="container">
         <div className="row">

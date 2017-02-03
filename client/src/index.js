@@ -5,6 +5,7 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { reducer as formReducer } from 'redux-form';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { AUTH_SIGNIN } from './actions';
 import authReducer from './reducers/authReducer';
@@ -56,15 +57,17 @@ if (token) {
 
 ReactDOM.render(
   <ApolloProvider store={store} client={client}>
-    <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
-      <Route path="/" component={App}>
-        <IndexRoute component={HomePageContainer} />
-        <Route path="signup" component={SignUpPage} />
-        <Route path="signin" component={SignInPage} />
-        <Route path="dashboard" component={RequireAuth(DashboardPageContainer)} />
-        <Route path="*" component={NoMatch} />
-      </Route>
-    </Router>
+    <MuiThemeProvider>
+      <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
+        <Route path="/" component={App}>
+          <IndexRoute component={HomePageContainer} />
+          <Route path="signup" component={SignUpPage} />
+          <Route path="signin" component={SignInPage} />
+          <Route path="dashboard" component={RequireAuth(DashboardPageContainer)} />
+          <Route path="*" component={NoMatch} />
+        </Route>
+      </Router>
+    </MuiThemeProvider>
   </ApolloProvider>,
   document.getElementById('root')
 );
