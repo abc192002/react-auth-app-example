@@ -1,15 +1,17 @@
 import React from 'react';
-
 import Navbar from '../containers/NavbarContainer';
 import AppBar from 'material-ui/AppBar';
 
+const alienar = {
+  marginLeft: 300,
+  marginRight: 300,
+}
 export default ({ children }) => (
     <div>
-      <AppBar
-        title="Project React-Redux-Graphql - Spanish"
-        iconClassNameRight="muidocs-icon-navigation-expand-more">
-  <Navbar />
-  </AppBar>
-      {children}
+      <AppBar title="MarerialUI-React-Redux-Graphql" >
+        <Navbar />
+      </AppBar>
+      <div style={alienar}>{children}</div>
+
     </div>
 );

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+const style = {
+  margin: 12,
+};
 const renderField = ({ input, label, type, meta: { touched, error } }) => {
   const hasError = (touched && error) ? 'has-danger' : '';
   return (
     <div className={`form-group ${hasError}`}>
-      <label>{label}</label>
-      <div>
-        <input {...input} placeholder={label} type={type} className="form-control" />
-        {touched && error && <div className="form-control-feedback">{error}</div>}
-      </div>
+        <TextField floatingLabelText={label} {...input} placeholder={label} type={type} className="form-control" errorText={touched && error && <div className="form-control-feedback">{error}</div>} />
     </div>
   );
 };
@@ -30,7 +30,7 @@ const SignUpForm = (props) => {
       <Field name="lastName" type="text" component={renderField} label="Apellido" />
       <Field name="email" type="email" component={renderField} label="Email" />
       <Field name="password" type="password" component={renderField} label="Contraseña" />
-      <button type="submit" className="btn btn-primary">Registrarse</button>
+      <RaisedButton type="submit" label="Registrarse" primary={true} style={style} className="btn btn-primary"></RaisedButton>
     </form>
   );
 }

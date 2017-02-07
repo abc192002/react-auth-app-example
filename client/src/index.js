@@ -6,6 +6,10 @@ import { ApolloProvider } from 'react-apollo';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { reducer as formReducer } from 'redux-form';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
+
 
 import { AUTH_SIGNIN } from './actions';
 import authReducer from './reducers/authReducer';
@@ -57,7 +61,8 @@ if (token) {
 
 ReactDOM.render(
   <ApolloProvider store={store} client={client}>
-    <MuiThemeProvider>
+      <MuiThemeProvider>
+
       <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
         <Route path="/" component={App}>
           <IndexRoute component={HomePageContainer} />
